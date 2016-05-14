@@ -1,30 +1,27 @@
 
 var express = require('express');
-var app = express();
+var router = express.Router();
 var request = require('request');
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
-var server = app.listen(3000, function(){
-  console.log('Express server has started on port 3000!');
+
+// middleware that is specific to this router
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
 });
 
-//test get
-//app.get('/', function(req, res){
-//  res.send('world!')
-//})
 
+router.use(bodyParser.json());
 
-app.get('/', function(req, res){
+router.get('/', function(req, res){
   if(req.query['hub.verify_token'] === ''){
     res.send(req.query['hub.challenge']);
   }
   res.send('Error, wrong validation token');
 })
 
-
-
-app.post('/', function (req, res) {
+router.post('/', function (req, res) {
   messaging_events = req.body.entry[0].messaging;
   for (i = 0; i < messaging_events.length; i++) {
     event = req.body.entry[0].messaging[i];
@@ -32,28 +29,25 @@ app.post('/', function (req, res) {
     if (event.message && event.message.text) {
       text = event.message.text;
 
-	if(text === 'Generic') {
-		sendGenericMessage(sender);
-		continue;
-	}
-	sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200));
+	    if (text === 'Generic') {
+   		   sendGenericMessage(sender);
+         continue;
+  	  }
 
+      sendTextMessage(sender, "Text received, echo: "+ text.substring(0, 200));
     }
 
-	if (event.postback) {
-  		text = JSON.stringify(event.postback);
-  		sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token);
-  		continue;
-	}
-
+	  if (event.postback) {
+      text = JSON.stringify(event.postback);
+      sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token);
+      continue;
+    }
   }
+
   res.sendStatus(200);
 });
 
-
-
 var token = "";
-
 
 function sendTextMessage(sender, text) {
   messageData = {
@@ -124,3 +118,4 @@ function sendGenericMessage(sender) {
     }
   });
 }
+module.exports = router;
