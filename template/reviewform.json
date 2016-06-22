@@ -1,0 +1,25 @@
+{
+	"attachment": {
+        	"type": "template",
+                "payload": {
+			"template_type": "generic",
+			"elements" : [{
+				"title" : "메뉴",
+				"buttons" : [{
+					"type" : "web_url",
+					"title" : "BOT HOME",
+					"url" : "https://www.facebook.com/580881398736981/"
+						}, {
+					"type" : "postback",
+					"title" : "리뷰 보기",
+					"payload" : "W_REV_1"
+						}, {
+					"type" : "postback",
+					"title" : "리뷰 작성",
+					"payload" : "W_REV_2"
+					}]
+				}]
+               		}
+		}
+}
+

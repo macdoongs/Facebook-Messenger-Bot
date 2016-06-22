@@ -1,0 +1,40 @@
+{
+	"attachment": {
+        	"type": "template",
+                "payload": {
+			"template_type": "generic",
+			"elements" : [{
+				"title" : "NOT BAD",
+				"buttons" : [{
+					"type" : "web_url",
+					"title" : "BOT HOME",
+					"url" : "https://www.facebook.com/580881398736981/"
+						}, {
+					"type" : "postback",
+					"title" : "☆☆☆☆★",
+					"payload" : "STAR__1"
+						}, {
+					"type" : "postback",
+					"title" : "☆☆☆★★",
+					"payload" : "STAR__2"
+					}]
+				},{
+				"title" : "GREAT",
+				"buttons" : [{
+                                       	"type" : "postback",
+                                      	"title" : "☆☆★★★",
+                                      	"payload" : "STAR__3"
+                                               	}, {
+					"type" : "postback",
+                                      	"title" : "☆★★★★",
+                                       	"payload" : "STAR__4"
+                                              	}, {
+					"type" : "postback",
+                                       	"title" : "★★★★★",
+                                        "payload" : "STAR__5"
+					}]
+				}]				
+               		}
+		}
+}
+

@@ -1,0 +1,36 @@
+{
+  "setting_type":"call_to_actions",
+  "thread_state":"new_thread",
+  "call_to_actions":[
+    {
+      "message":{
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+              {
+                "title":"우리들의 영화 이야기, BOT's OFFICE!",
+                "item_url":"https://www.facebook.com/580881398736981/",
+                "image_url":"www.korchid.com/image/logo.jpg",
+                "subtitle":"영화 평가, 정보 공유 플랫폼",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "title":"View Website",
+                    "url":"https://www.facebook.com/580881398736981/"
+                  },
+                  {
+                    "type":"postback",
+                    "title":"노크",
+                    "payload":"KNOCK"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

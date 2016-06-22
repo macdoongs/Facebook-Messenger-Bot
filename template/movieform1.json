@@ -1,0 +1,27 @@
+{
+	"attachment": {
+		"type": "template",
+		"payload": {
+                	"template_type": "generic",
+                	"elements": [{
+                        	"title": "",
+                                "subtitle": "",
+                                "item_url": "",
+                                "image_url": "",
+                                "buttons": [{
+                               		"type": "web_url",
+                                        "url": "",
+                                        "title": "URL"
+                                        	}, {
+                                        "type": "postback",
+                                        "title": "평점",
+                                        "payload": "GRADE_"
+                                        	}, {
+                                        "type": "postback",
+                                        "title": "리뷰",
+                                        "payload": "REVIE_"
+                                       	}]
+                                }]
+                        }
+              	}
+}
