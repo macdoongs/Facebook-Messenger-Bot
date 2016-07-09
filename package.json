@@ -1,0 +1,32 @@
+{
+  "name": "BOTs OFFICE",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "bootstrap-jquery": "^3.3.2",
+    "cheerio": "^0.20.0",
+    "config.json": "^0.0.4",
+    "delayed": "^1.0.1",
+    "gcloud": "^0.34.0",
+    "imdb": "^1.1.0",
+    "imdb-api": "^1.3.3",
+    "jQuery": "^1.7.4",
+    "jade": "^1.11.0",
+    "jquery": "^2.2.4",
+    "jsdom": "^3.1.2",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "querystring": "^0.2.0",
+    "striptags": "^2.1.1",
+    "utf8": "^2.1.1",
+    "xml2js": "^0.4.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Youngmin Kim",
+  "license": "ISC"
+}
