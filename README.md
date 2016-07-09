@@ -1,11 +1,11 @@
 # BOT's OFFICE
 
 ## Overview
-**Platform**
+#Platform
 Facebook messenger
-**Type**
+#Type
 Movie bot
-**Description**
+#Description
 Facebook messenger bot which offers information of movies. And users share their opinions about movies.
 
 
