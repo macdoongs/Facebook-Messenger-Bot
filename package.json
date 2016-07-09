@@ -1,5 +1,6 @@
 {
   "name": "BOTs OFFICE",
+  "version": "0.8.0",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.15.1",
