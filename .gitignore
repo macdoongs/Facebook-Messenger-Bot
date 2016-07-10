@@ -38,5 +38,8 @@ Thumbs.db
 .config/
 config/
 
+# Module directory
+node_modules/
+
 # gitignore directory
 gitignore/

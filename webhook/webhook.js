@@ -32,12 +32,9 @@ var conn = mysql.createConnection({
 conn.connect();
 
 
-
 // TODO Session related
 var passport = require('passport')	// Facebook login function
     , FacebookStrategy = require('passport-facebook').Strategy;
-
-
 
 
 // Google Cloud Vision API
@@ -50,7 +47,6 @@ var gConfig = {
 // Get a reference to the vision component
 var gcloud = require('gcloud')(gConfig);
 var vision = gcloud.vision();
-
 
 
 var storeQuery = "";
@@ -157,8 +153,6 @@ router.post('/', function (req, res) {
 
 		sender = event.sender.id;
 
-
-
 		//console.log(sender);
 
 		if(event.message && event.message.text == '?'){
@@ -173,7 +167,7 @@ router.post('/', function (req, res) {
 		}
 
 		//console.log("MODE = " + mode);
-    		
+
 		if (event.message && event.message.text && !mode) {
 			text = event.message.text;
 			//console.log("\n\nGeneric text: " + text);
@@ -328,8 +322,8 @@ router.post('/', function (req, res) {
 									var pGrade = JSON.parse(sGrade);
 									console.log(pGrade);
 									var avgGrade = Number(pGrade[0].AVG);
-									
-									
+
+
 									botMessage = "이 영화의 평점은 : " + avgGrade + "\n";
 									console.log(avgGrade);
 									sendTextMessage(sender, botMessage, token);
@@ -355,8 +349,8 @@ router.post('/', function (req, res) {
 				break;
 			}else if("REVIE" === temptext){
 				movieSeq = buttonSeq;
-				
-				reviewMovie(sender);			
+
+				reviewMovie(sender);
 
 				break;
 			}else if("W_REV" === temptext){
@@ -374,7 +368,7 @@ router.post('/', function (req, res) {
 								botMessage = "아무도 리뷰를 안남겼네..?ㅎㅎ";
                                                         	sendTextMessage(sender, botMessage, token);
                                                 	}else{
-                                                        
+
 								sql = 'SELECT Review FROM WRITE_REVIEW WHERE (Sword = "' +  searchWord + '" AND Sseq = "' + movieSeq + '" ) order by rand() limit 5';
 
                                                         	conn.query(sql, function(error, rows, fields){
@@ -392,9 +386,9 @@ router.post('/', function (req, res) {
 								});
 
 							}
-				
+
 						}
-					});	
+					});
 
 				}else{ // write review
 					var sql = 'SELECT * FROM WRITE_REVIEW WHERE (Sword = "' +  searchWord + '" AND Sseq = "' + movieSeq + '" AND Uid = "' + sender + '")';
@@ -602,7 +596,7 @@ function reviewMovie(sender){
 	var reviewForm = fs.readFileSync("./template/reviewform.json");
 
 	messageData = JSON.parse(reviewForm);
-	
+
 	postMessageData(messageData);
 }
 
